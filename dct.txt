@@ -1,0 +1,7 @@
+;; be strict in what you define and liberal in what you accept - holy Jon!
+col:column
+frm:from
+flr:filter
+clj:closure
+wlk:walk
+fn:filename

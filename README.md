@@ -1,2 +1,20 @@
 # PhascolarctosCinereus
-Not a snake, nor a panda and also not a bear: elephant filtering data with PHP 8.4+
+Not a snake, nor a panda and also not a bear: 
+the elephant in the room will be filtering data with PHP 8.4+
+
+Namespace will be <code>Koalas\\*</code>
+
+## Motivation 
+
+Just reimplement that stuff
+
+
+### Convention
+
+1. We use short hand variable names (dta, col, fn, clj, flr) for (data, column, filename, closure, filter), but 'speaking' class names (e.G: ListClass)
+
+2. Classes wrapping funtionality for native PHP data types will be named like <code>StringClass</code> as in <code>stdClass</code>, but <code>ucfirst</code>-style
+
+3. Global functions borrowed from the snake, but existing in PHP, will be prefixed by <code>k</code> as in <code>kprint</code>
+
+so: be consulted by <code>dct.txt/dtadct.md </code>
