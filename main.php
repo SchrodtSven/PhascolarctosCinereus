@@ -1,12 +1,15 @@
 <?php
 
 
-require_once 'src/Koalas/Autoload.php';
+require_once 'src/Koalas/Bootstrap.php';
+
 
 use Koalas\Type\ListClass;
 use Koalas\DataFrame;
 
-$foo = DataFrame::frmJson('data/customers_small_db.json');
+#use function Koalas\kprint;
+
+$foo = DataFrame::fromJson('data/customers_small_db.json');
 
 #print_r($foo);
 
@@ -17,4 +20,5 @@ $foo = DataFrame::frmJson('data/customers_small_db.json');
 #$bar = $foo->slice(1, 3);
 
 
-print_r($foo->slice(1,3));
+#kprint(gettype($foo->slice(0,3)));
+kprint($foo->slice(0,1));

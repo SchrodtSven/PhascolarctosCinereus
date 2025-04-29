@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * AL
+ * AL && including global functions
  * 
  * @author Sven Schrodt<sven@schrodt.club>
  * @link https://github.com/SchrodtSven/PhascolarctosCinereus
@@ -12,7 +12,7 @@
 
 namespace Koalas;
 
-class Autoload
+class Bootstrap
 {
 
     /**
@@ -38,7 +38,7 @@ class Autoload
         spl_autoload_register(callback: function ($className) {
 
             // Check if namespace of class to be instantiated belongs to us
-            if (str_starts_with($className,  Autoload::NAMESPACE)) {
+            if (str_starts_with($className,  Bootstrap::NAMESPACE)) {
                 $file = self::LIB_PREFIX . str_replace('\\', '/', $className) . '.php';
                 // Check if destination class file exists  and include it, if so - __do not throw__ \E*, because of AL chain!
                 // @see https://www.php-fig.org/psr/psr-4/#2-specification : "4. Autoloader implementations *MUST NOT* throw exceptions,
@@ -50,6 +50,7 @@ class Autoload
         });
     }
 }
-(new Autoload())->registerAutoloader();
+require_once 'src/Globals.php';
+(new Bootstrap())->registerAutoloader();
 
 
