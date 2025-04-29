@@ -11,9 +11,9 @@
 
 namespace Koalas\Type;
 
-class ListClass
+class ListClass implements \Countable
 {
-    public function __construct(protected array$dta = [])
+    public function __construct(protected array $dta = [])
     {
         # print('FOOO' . self::class);
     }
@@ -25,7 +25,8 @@ class ListClass
 
     public static function frmJson(string $fn): self
     {
-        return new self(json_decode(file_get_contents($fn)));
+        $class = static::class;
+        return new $class(json_decode(file_get_contents($fn)));
     }
 
     public function flr(callable $clj): self
@@ -49,5 +50,23 @@ class ListClass
         return new StringClass(implode($glue, $this->dta));
     }
     
+    public function count(): int
+    {
+        return count($this->dta);
+    }
 
+    public function slice(int $offset, int $length)
+    {
+        return array_slice($this->dta, $offset, $length);
+    }
+
+    public function head(int $number)
+    {
+        return $this->slice(0, $number);
+    }
+
+    public function tail(int $number)
+    {
+        return $this->slice(count($this->dta), $number*-1);
+    }
 }

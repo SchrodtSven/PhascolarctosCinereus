@@ -4,10 +4,17 @@
 require_once 'src/Koalas/Autoload.php';
 
 use Koalas\Type\ListClass;
+use Koalas\DataFrame;
 
-$foo = ListClass::frmJson('data/customers_database.json');
+$foo = DataFrame::frmJson('data/customers_small_db.json');
 
-$bar = $foo->col('last_name');
+#print_r($foo);
 
 
-print_r($bar);
+#exit();
+
+
+#$bar = $foo->slice(1, 3);
+
+
+print_r($foo->slice(1,3));
