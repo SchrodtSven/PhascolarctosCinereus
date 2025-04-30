@@ -1,7 +1,9 @@
 # PhascolarctosCinereus
 Not a snake, nor a panda and also not a bear!
 
-the elephant (P(HP)un intented) in the room will be:
+## 🐘
+
+The elephant (P(HP)un intended) in the room will be:
  - reading from different re|sources
  - filtering 
  - manipulating

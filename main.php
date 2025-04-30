@@ -24,16 +24,22 @@ $foo = DataFrame::readJson('data/customers_small_db.json');
 #kprint($foo->slice(0,1));
 
 #echo $foo;
-$dmp = $koalas->dataFrame([ 'first_name' => 'Alair',
-'last_name' => 'Vittle',
-'email' => 'avittle4@wiley.com',
-'gender' => 'Male',
-'country' => 'China',
-'city' => 'Xinfeng',
-'status' => NULL,
-'currency' => 'Yuan Renminbi',
-'credit_card' => '3579191844450140',
-'address' => 'PO Box 67244']);
+$dmp = $koalas->dataFrame([
+    'first_name' => 'Alair',
+    'last_name' => 'Vittle',
+    'email' => 'avittle4@wiley.com',
+    'gender' => 'Male',
+    'country' => 'China',
+    'city' => 'Xinfeng',
+    'status' => NULL,
+    'currency' => 'Yuan Renminbi',
+    'credit_card' => '3579191844450140',
+    'address' => 'PO Box 67244'
+]);
 
-kprint($dmp);
+#kprint($dmp);
 #kprint($foo);
+# print "&#x2122";
+#print "&#x1F418";
+$g = IntlChar::chr(0x1F418);
+print($g);
