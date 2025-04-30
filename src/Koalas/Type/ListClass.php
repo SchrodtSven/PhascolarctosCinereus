@@ -25,7 +25,7 @@ class ListClass implements \Countable, \Stringable
         return new self(array_column($this->dta, $col));
     }
 
-    public static function fromJson(string $fn): self
+    public static function readJson(string $fn): self
     {
         $class = static::class;
         return new $class(json_decode(file_get_contents($fn)));
@@ -62,12 +62,12 @@ class ListClass implements \Countable, \Stringable
         return array_slice($this->dta, $offset, $length);
     }
 
-    public function head(int $number)
+    public function head(int $number=5)
     {
         return $this->slice(0, $number);
     }
 
-    public function tail(int $number)
+    public function tail(int $number=5)
     {
         return $this->slice(count($this->dta), $number*-1);
     }
@@ -75,5 +75,11 @@ class ListClass implements \Countable, \Stringable
     public function __toString(): string
     {
         return var_export($this->dta, true);
+    }
+
+
+    public function keys(): static
+    {
+        return new static(array_keys($this->dta));
     }
 }

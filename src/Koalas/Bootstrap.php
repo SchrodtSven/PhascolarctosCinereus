@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * AL && including global functions
+ * AL && including global functions, creating lobal $koalas (instance of Koalas\Core\Base)
  * 
  * @author Sven Schrodt<sven@schrodt.club>
  * @link https://github.com/SchrodtSven/PhascolarctosCinereus
@@ -11,6 +11,7 @@
 
 
 namespace Koalas;
+use Koalas\Core\Base;
 
 class Bootstrap
 {
@@ -53,4 +54,4 @@ class Bootstrap
 require_once 'src/Globals.php';
 (new Bootstrap())->registerAutoloader();
 
-
+$koalas = new Base();

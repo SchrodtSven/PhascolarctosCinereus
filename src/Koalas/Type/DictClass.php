@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * DataFrames like snaky bears
+ * Class managing ass. Arrays (Hash Maps, Dictionaries) aka Dict in this context
  * 
  * @author Sven Schrodt<sven@schrodt.club>
  * @link https://github.com/SchrodtSven/PhascolarctosCinereus
@@ -8,11 +8,13 @@
  * @version 0.1
  * @since 2025-04-29
  */
-namespace Koalas;
 
-class DataFrame extends \Koalas\Type\ListClass
+namespace Koalas\Core;
+
+use Koalas\Type\ListClass;
+use Koalas\DataFrame;
+
+class DictClass
 {
-
-    
     
 }

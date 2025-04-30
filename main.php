@@ -9,7 +9,7 @@ use Koalas\DataFrame;
 
 #use function Koalas\kprint;
 
-$foo = DataFrame::fromJson('data/customers_small_db.json');
+$foo = DataFrame::readJson('data/customers_small_db.json');
 
 #print_r($foo);
 
@@ -22,3 +22,7 @@ $foo = DataFrame::fromJson('data/customers_small_db.json');
 
 #kprint(gettype($foo->slice(0,3)));
 kprint($foo->slice(0,1));
+
+echo $foo;
+
+var_dump($koalas);

@@ -1,12 +1,19 @@
 # PhascolarctosCinereus
-Not a snake, nor a panda and also not a bear: 
-the elephant in the room will be filtering data with PHP 8.4+
+Not a snake, nor a panda and also not a bear!
+
+the elephant (P(HP)un intented) in the room will be:
+ - reading from different re|sources
+ - filtering 
+ - manipulating
+ - exporting/transforming to different data types/formats
+ 
+ <b>data</b> with <i>PHP 8.4+</i>
 
 Namespace will be <code>Koalas\\*</code>
 
 ## Motivation 
 
-Just reimplement that stuff
+Just reimplement that stuff, having fun, learning things
 
 
 ### Convention

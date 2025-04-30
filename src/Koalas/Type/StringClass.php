@@ -19,6 +19,18 @@ class StringClass
         # print('FOOO' . self::class);
     }
 
+    public function prepend(string|StringClass $prefix): static
+    {
+        $this->dta = (string) $prefix . $this->dta;
+        return $this;
+    }
+
+    public function append(string|StringClass $suffix): static
+    {
+        $this->dta = $this->dta . (string) $suffix ;
+        return $this;
+    }
+
     public function __toString(): string
     {
         return $this->dta;
