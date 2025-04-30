@@ -20,28 +20,28 @@ class ListClass implements \Countable, \Stringable
         # print('FOOO' . self::class);
     }
 
-    public function col(string $col): self
+    public function col(string $col): static
     {
         return new self(array_column($this->dta, $col));
     }
 
-    public static function readJson(string $fn): self
+    public static function readJson(string $fn): static
     {
         $class = static::class;
         return new $class(json_decode(file_get_contents($fn)));
     }
 
-    public function filter(callable $clj): self
+    public function filter(callable $clj): static
     {
         return new self(array_filter($this->dta, $clj));
     }
 
-    public function map(callable $clj): self
+    public function map(callable $clj): static
     {
         return new self(array_map($this->dta, $clj));
     }
 
-    public function walk(callable $clj): self
+    public function walk(callable $clj): static
     {
         array_walk($this->dta, $clj);
         return $this;

@@ -21,8 +21,19 @@ $foo = DataFrame::readJson('data/customers_small_db.json');
 
 
 #kprint(gettype($foo->slice(0,3)));
-kprint($foo->slice(0,1));
+#kprint($foo->slice(0,1));
 
-echo $foo;
+#echo $foo;
+$dmp = $koalas->dataFrame([ 'first_name' => 'Alair',
+'last_name' => 'Vittle',
+'email' => 'avittle4@wiley.com',
+'gender' => 'Male',
+'country' => 'China',
+'city' => 'Xinfeng',
+'status' => NULL,
+'currency' => 'Yuan Renminbi',
+'credit_card' => '3579191844450140',
+'address' => 'PO Box 67244']);
 
-var_dump($koalas);
+kprint($dmp);
+#kprint($foo);

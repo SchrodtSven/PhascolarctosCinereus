@@ -9,7 +9,7 @@
  * @since 2025-04-29
  */
 
-#namespace Koalas;
+# no namespace, cauz global;)
 use Koalas\Core\StdIO;
 
 function kprint(mixed $arg, string $sep=' ', $end=PHP_EOL): void
@@ -17,9 +17,9 @@ function kprint(mixed $arg, string $sep=' ', $end=PHP_EOL): void
    // @FIXME: handling depending on $arg's type  - the snaky way
    # p rint_r(gettype($arg));
 
-   StdIO::toString($arg);
-   print($end);
-   print_r($arg);
-   print($end);
+   $t = StdIO::toString($arg);
+   print($t);
+   // print_r($arg);
+   // print($end);
 }
 

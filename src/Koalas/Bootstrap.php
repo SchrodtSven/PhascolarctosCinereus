@@ -1,6 +1,8 @@
 <?php declare(strict_types=1);
 /**
- * AL && including global functions, creating lobal $koalas (instance of Koalas\Core\Base)
+ * - Registering AL 
+ * - && including global functions, 
+ * -  creating lobal $koalas (instance of Koalas\Core\Base)
  * 
  * @author Sven Schrodt<sven@schrodt.club>
  * @link https://github.com/SchrodtSven/PhascolarctosCinereus
