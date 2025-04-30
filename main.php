@@ -4,42 +4,18 @@
 require_once 'src/Koalas/Bootstrap.php';
 
 
-use Koalas\Type\ListClass;
-use Koalas\DataFrame;
-
+use Koalas\Type\Ls;
+use Koalas\Type\Lst;
+use Koalas\Internal\AccessParser;
+$ap = new AccessParser;
 #use function Koalas\kprint;
 
-$foo = DataFrame::readJson('data/customers_small_db.json');
+$foo = new Lst(['Werner', 'Herbert', 'Franzy']);
 
-#print_r($foo);
+//var_dump($foo['0:2']);
 
-
-#exit();
-
-
-#$bar = $foo->slice(1, 3);
-
-
-#kprint(gettype($foo->slice(0,3)));
-#kprint($foo->slice(0,1));
-
-#echo $foo;
-$dmp = $koalas->dataFrame([
-    'first_name' => 'Alair',
-    'last_name' => 'Vittle',
-    'email' => 'avittle4@wiley.com',
-    'gender' => 'Male',
-    'country' => 'China',
-    'city' => 'Xinfeng',
-    'status' => NULL,
-    'currency' => 'Yuan Renminbi',
-    'credit_card' => '3579191844450140',
-    'address' => 'PO Box 67244'
-]);
-
-#kprint($dmp);
-#kprint($foo);
-# print "&#x2122";
-#print "&#x1F418";
-$g = IntlChar::chr(0x1F418);
-print($g);
+var_dump($koalas);die;
+foreach(['12:', '2:77', ':5', 2, 3, 'sharky'] as $itm) {
+    kprint($itm); 
+    kprint($ap->analyse($itm));
+}

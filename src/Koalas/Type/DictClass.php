@@ -9,12 +9,13 @@
  * @since 2025-04-29
  */
 
-namespace Koalas\Core;
+namespace Koalas\Type;
 
 use Koalas\Type\ListClass;
 use Koalas\DataFrame;
 
-class DictClass
+class DictClass extends ListClass
 {
-    
+    public function __construct(protected array $dta = [])
+    {}
 }

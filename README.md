@@ -1,13 +1,14 @@
 # PhascolarctosCinereus
 Not a snake, nor a panda and also not a bear!
 
-## 🐘
+## 🐘 - pain, or  PH(P)un?
 
-The elephant (P(HP)un intended) in the room will be:
+I do not know, how you like it, but the elephant (P(*)un intended) in the room will be:
  - reading from different re|sources
  - filtering 
  - manipulating
  - exporting/transforming to different data types/formats
+ - tbd stuff
  
  <b>data</b> with <i>PHP 8.4+</i>
 

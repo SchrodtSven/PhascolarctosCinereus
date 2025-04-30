@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * Class managing native lists as instances
+ * Class managing snaky lists - sssth
  * 
  * @author Sven Schrodt<sven@schrodt.club>
  * @link https://github.com/SchrodtSven/PhascolarctosCinereus
@@ -13,7 +13,7 @@ namespace Koalas\Type;
 
 use Koalas\Core\StdIO;
 
-class ListClass implements \Countable, \Stringable, \Iterator, \ArrayAccess
+class Lst implements \Countable, \Stringable, \Iterator, \ArrayAccess
 {
     protected int $position;
 
@@ -154,6 +154,7 @@ class ListClass implements \Countable, \Stringable, \Iterator, \ArrayAccess
 
     public function offsetSet($offset, $value): void
     {
+      
         if (is_null($offset)) {
             $this->dta[] = $value;
         } else {
@@ -173,6 +174,7 @@ class ListClass implements \Countable, \Stringable, \Iterator, \ArrayAccess
 
     public function offsetGet($offset): mixed
     {
+        var_dump($offset);die;
         return isset($this->dta[$offset]) ? $this->dta[$offset] : null;
     }
 
