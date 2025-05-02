@@ -62,7 +62,15 @@ class Lst implements \Countable, \Stringable, \Iterator, \ArrayAccess
         return count($this->dta);
     }
 
-    public function slice(int $offset, int $length)
+    /**
+     * @FIXME implement supprot for $step param
+     *
+     * @param integer $offset
+     * @param integer $length
+     * @param integer $step
+     * @return void
+     */
+    public function slice(int $offset, int $length, int $step=1)
     {
         return array_slice($this->dta, $offset, $length);
     }

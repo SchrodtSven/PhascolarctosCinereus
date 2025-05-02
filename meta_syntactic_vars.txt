@@ -12,6 +12,8 @@ waldo
 fred
 plugh
 thud
+zim
 spam 
 ham 
 eggs
+dib

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * Formating data for STDOUT
+ * Formatting data for STDOUT
  * 
  * @author Sven Schrodt<sven@schrodt.club>
  * @link https://github.com/SchrodtSven/PhascolarctosCinereus
@@ -13,9 +13,17 @@ namespace Koalas\StdOut;
 class Format
 {
 
+    /**
+     * Formatting output for given $dta (structure) the sqlite way
+     *
+     * @param iterable $dta
+     * @return string
+     */
     public function sqlite(iterable $dta): string
     {
         $tmp = '';
         return $tmp;
     }
+
+
 }

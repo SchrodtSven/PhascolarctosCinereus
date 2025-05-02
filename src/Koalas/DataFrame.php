@@ -13,6 +13,9 @@ namespace Koalas;
 class DataFrame extends \Koalas\Type\ListClass
 {
 
-    
+    // @FIXME - implement functions, adjust signatures and return type defs
+    public function loc(mixed $foo)  {}
+
+    public function iloc(int $foo)  {}
     
 }

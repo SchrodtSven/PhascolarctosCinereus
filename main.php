@@ -14,8 +14,17 @@ $foo = new Lst(['Werner', 'Herbert', 'Franzy']);
 
 //var_dump($foo['0:2']);
 
-var_dump($koalas);die;
-foreach(['12:', '2:77', ':5', 2, 3, 'sharky'] as $itm) {
+#var_dump($koalas);die;
+foreach(['12:', '2:77', ':5', 2, 3, 'sharky', '1:3:2', '2::2'] as $itm) {
     kprint($itm); 
     kprint($ap->analyse($itm));
+   
 }
+
+var_dump($itm);
+$tmp = $ap->analyse($itm);
+var_dump(empty($tmp[0]));
+var_dump(empty($tmp[1]));
+var_dump(empty($tmp[2]));
+
+

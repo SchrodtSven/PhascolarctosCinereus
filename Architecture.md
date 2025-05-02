@@ -1,10 +1,17 @@
-# Architecture File
+# DAD - Design& Architecture Dossier
+
+
+## Way to go, while developing 
+
+During the main developing phase of this project, we will use magic interceptors (that may disappear l8er; or *not*).
+
 
 ## Global stuff
 
 1. The global instance of <code>Koalas\Core\Base</code> named <code>$koalas</code> will always exists - but never mind, it is
-    - Lazy loding
-    - Needed anyway
+    - Lazy loding,  or
+    - Needed anyway, but 
+    - *not* disturbing if unused
 
 ## Indexing, Slicing
 
