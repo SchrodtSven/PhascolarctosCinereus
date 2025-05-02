@@ -21,5 +21,5 @@ class Base
     public function dataFrame(array|ListClass $dta): DataFrame
     {
         return new DataFrame($dta);
-    }
+    }   
 }

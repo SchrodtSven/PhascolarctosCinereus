@@ -26,5 +26,4 @@ $tmp = $ap->analyse($itm);
 var_dump(empty($tmp[0]));
 var_dump(empty($tmp[1]));
 var_dump(empty($tmp[2]));
-
-
+// sO. we can check if(empty)
