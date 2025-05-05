@@ -12,15 +12,18 @@
 namespace Koalas\Type;
 
 use Koalas\Core\StdIO;
+use Koalas\Internal\AccessParser;
+use Koalas\Type\Dry\LstAccess; 
 
 class Lst implements \Countable, \Stringable, \Iterator, \ArrayAccess
 {
+    use LstAccess;
     protected int $position;
 
     public function __construct(protected array $dta = [])
     {
         if(!array_is_list($dta)) {
-            throw new \InvalidArgumentException('This is not a fuckin list!');
+            throw new \InvalidArgumentException('This is not a fuckin\' list!');
         }
     }
 
@@ -63,7 +66,7 @@ class Lst implements \Countable, \Stringable, \Iterator, \ArrayAccess
     }
 
     /**
-     * @FIXME implement supprot for $step param
+     * @FIXME implement support for $step param
      *
      * @param integer $offset
      * @param integer $length
@@ -157,36 +160,7 @@ class Lst implements \Countable, \Stringable, \Iterator, \ArrayAccess
         return isset($this->dta[$this->position]);
     }
 
-    // Implementing ArrayAccess
-
-
-    public function offsetSet($offset, $value): void
-    {
-      
-        if (is_null($offset)) {
-            $this->dta[] = $value;
-        } else {
-            $this->dta[$offset] = $value;
-        }
-    }
-
-    public function offsetExists($offset): bool
-    {
-        return isset($this->dta[$offset]);
-    }
-
-    public function offsetUnset($offset): void
-    {
-        unset($this->dta[$offset]);
-    }
-
-    public function offsetGet($offset): mixed
-    {
-        var_dump($offset);die;
-        return isset($this->dta[$offset]) ? $this->dta[$offset] : null;
-    }
-
-
+    
 
 
 }

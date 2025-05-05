@@ -2,8 +2,8 @@
 /**
  * router.php - to be used with PHP Development Server 
  * 
- * - bootstrapping incl. registering AL
- * 
+ * Routes to `public/index.php`, if mapped (uri part <-> File system) resourse does not exist 
+ *   
  * @author Sven Schrodt<sven@schrodt.club>
  * @link https://github.com/SchrodtSven/PhascolarctosCinereus
  * @package 

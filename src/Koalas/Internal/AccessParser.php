@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * Class parsing array|index|slice|step [$arguments] for array (slice, keyed, indexed and opt. stepped by) access to lists
+ * Class parsing array|index|slice|step [$arguments] for array (sliced, keyed/indexed and opt. stepped by) access to lists
  * 
  * @author Sven Schrodt<sven@schrodt.club>
  * @link https://github.com/SchrodtSven/PhascolarctosCinereus
@@ -15,30 +15,42 @@ use Koalas\Type\StringClass;
 class AccessParser
 {
     public const string SEP = ':';
+
+    private static $instance = null;
+
     /**
+     * accessors ($idxslcstp) be like 
      * 
+     * - 'index/key' | 
+     * - 'start:end:step', OR opened:
+     * - '1:'
+     * - ':2'
+     * - '::2'
+     * - '1::2'
      *
      * @param string|StringClass $idxslc
      * @return array
      */
-    public function analyse(string|StringClass $idxslcstp): array
+    public function analyse(string|StringClass|int $idxslcstp): array
     {
+        if(is_int($idxslcstp)) return [$idxslcstp];
         $tmp = [];
-        if(!strstr((string) $idxslcstp, ':')) {
+
+        if(!strstr((string) $idxslcstp, self::SEP)) {
             if(is_numeric($idxslcstp)) {
                 $tmp = [(int) $idxslcstp];
             } else {
                 $tmp = [$idxslcstp];
             }
         } else {
-            $parts =  explode(':', $idxslcstp);
+            $parts =  explode(self::SEP, $idxslcstp);
             $step = 1;
-            $start = $parts[0];
-            $end = $parts[1];
+            $start = (int) $parts[0];
+            $end = (int) $parts[1];
 
-            if(strpos($idxslcstp, ':') == 0 ) {
+            if(strpos($idxslcstp, self::SEP) == 0 ) {
                 $tmp = [0,$end];
-            } elseif(strpos($idxslcstp, ':') != strlen($idxslcstp)-1) {
+            } elseif(strpos($idxslcstp, self::SEP) != strlen($idxslcstp)-1) {
                 $tmp = [$start, $end];
             } else {
                 $tmp = [$start, null];
@@ -53,4 +65,14 @@ class AccessParser
         return($tmp);
     } 
     
+    /**
+     * To be used as (anonymous) factory method returning singleton instance
+     *
+     * @return self
+     */
+    public static function g(): self
+    {
+        if(is_null(self::$instance)) self::$instance = new self();
+        return self::$instance;
+    }
 }

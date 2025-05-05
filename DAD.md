@@ -22,8 +22,9 @@ Ok, we can *not* access (<code>ArrayAccess</code> implementing types) the snaky 
 
  directly, because indices or keys may only be of type <code>string|int</code>
 
- So we are making a little tradeoff here, by slicing this way (resulting in short handed <kbd>*::slice()</kbd>):
+ So we are making a little tradeoff here, by slicing this way (accessors as `string`; resulting in short handed <kbd>*::slice($idxslcstp)</kbd>):
 
  - <code>$a['1:2']</code>
  - <code>$a['3:']</code>
  - <code>$a[':4']</code>
+  - <code>$a['::2']</code>
