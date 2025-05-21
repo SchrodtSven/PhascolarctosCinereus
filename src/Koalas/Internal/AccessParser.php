@@ -31,7 +31,7 @@ class AccessParser
      * @param string|StringClass $idxslc
      * @return array
      */
-    public function analyse(string|StringClass|int $idxslcstp): array
+    public function analyse(string|StringClass|int|array $idxslcstp): array
     {
         if(is_int($idxslcstp)) return [$idxslcstp];
         $tmp = [];

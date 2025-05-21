@@ -42,8 +42,15 @@ trait ListAccess
 
     public function offsetGet($offset): mixed
     {
-        //var_dump($offset);die;
-        
+       //var_dump($offset);die;
+        if(is_array($offset)) {
+            $tmp = array_unique($offset);
+            $ret = [];
+            for($i=0;$i<count($tmp);$i++) {
+                $ret[] = $this->dta[$tmp[$i]] ?? null;
+            }
+            return $ret;
+         }
         kprint($offset);
        # var_dump($ctx);
         $ctx = $this->sanitizeAccessorContext($offset);
