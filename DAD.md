@@ -27,4 +27,5 @@ Ok, we can *not* access (<code>ArrayAccess</code> implementing types) the snaky 
  - <code>$a['1:2']</code>
  - <code>$a['3:']</code>
  - <code>$a[':4']</code>
-  - <code>$a['::2']</code>
+ - <code>$a['::2']</code>
+ 

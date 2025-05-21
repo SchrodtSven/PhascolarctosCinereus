@@ -17,7 +17,7 @@ use Koalas\Internal\AccessParser;
 trait LstAccess 
 {
     
-    // Implementing ArrayAccess incl. access operators like `[0::2]` (from start to end, stepped by 2)
+    // Implementing ArrayAccess incl. access operators like `['0::2']` (from start to end, stepped by 2)
 
 
     public function offsetSet($offset, $value): void

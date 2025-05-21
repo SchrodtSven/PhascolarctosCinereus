@@ -23,13 +23,13 @@ class Lst implements \Countable, \Stringable, \Iterator, \ArrayAccess
     public function __construct(protected array $dta = [])
     {
         if(!array_is_list($dta)) {
-            throw new \InvalidArgumentException('This is not a fuckin\' list!');
+            throw new \InvalidArgumentException('This is not a list!');
         }
     }
 
-    public function col(string $col): static
+    public function col(string $col,  int|string|null $indexKey = null): static
     {
-        return new self(array_column($this->dta, $col));
+        return new self(array_column($this->dta, $col, $indexKey));
     }
 
     public static function readJson(string $fn): static
@@ -160,7 +160,16 @@ class Lst implements \Countable, \Stringable, \Iterator, \ArrayAccess
         return isset($this->dta[$this->position]);
     }
 
-    
+    public function unique(int $flags = \SORT_STRING): static
+    {
+        return new static (array_unique($this->dta, $flags));
+    }
 
+    public function sum(): int|float
+    {
+        return array_sum($this->dta);
 
-}
+    }
+
+ 
+}   

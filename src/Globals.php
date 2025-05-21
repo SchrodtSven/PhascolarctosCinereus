@@ -12,7 +12,7 @@
 # no namespace, cauz global;)
 use Koalas\Core\StdIO;
 
-function kprint(mixed $arg, string $sep=' ', $end=PHP_EOL): void
+function kprint(mixed $arg, string $sep=' ', $end=\PHP_EOL): void
 {
    // @FIXME: handling depending on $arg's type  - the snaky way
    # p rint_r(gettype($arg));
@@ -21,5 +21,11 @@ function kprint(mixed $arg, string $sep=' ', $end=PHP_EOL): void
    print($t);
    // print_r($arg);
    print($end);
+}
+
+// @FIXME: handling various amount/type of params
+function krange(string|int|float $start, string|int|float $end, int|float $step = 1): array
+{
+   return range($start, $end, $step);
 }
 
