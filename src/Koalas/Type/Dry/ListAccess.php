@@ -40,9 +40,15 @@ trait ListAccess
         unset($this->dta[$offset]);
     }
 
+    /**
+     * @FIXME: extend to other selectors
+     *
+     * @param [type] $offset
+     * @return mixed
+     */
     public function offsetGet($offset): mixed
     {
-       //var_dump($offset);die;
+     
         if(is_array($offset)) {
             $tmp = array_unique($offset);
             $ret = [];
@@ -51,13 +57,8 @@ trait ListAccess
             }
             return $ret;
          }
-        kprint($offset);
-       # var_dump($ctx);
         $ctx = $this->sanitizeAccessorContext($offset);
 
-
-        //print("FOOO - " . count($ctx) . PHP_EOL); 
-        // var_dump($ctx);
         return match(count($ctx)) {
             1 => isset($this->dta[$offset]) ? $this->dta[$offset] : null,
             default => array_slice($this->dta, $ctx[0], $ctx[1]+1),
