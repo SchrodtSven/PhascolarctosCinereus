@@ -38,9 +38,15 @@ function kprintm(...$args)
 }
 
 
+
 // @FIXME: handling various amount/type of params
 function krange(string|int|float $start, string|int|float $end, int|float $step = 1): array
 {
    return range($start, $end, $step);
+}
+
+function kfunctions(): array
+{
+   return get_defined_functions()['user'];
 }
 

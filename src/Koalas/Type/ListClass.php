@@ -34,9 +34,9 @@ class ListClass implements \Countable, \Stringable, \Iterator, \ArrayAccess
 
     public static function readJson(string $fn): static
     {
-        $class = static::class;
+        #$class = static::class;
         #die($class);
-        return new $class(json_decode(file_get_contents($fn)));
+        return new static(json_decode(file_get_contents($fn)));
     }
 
     public function filter(callable $clj): static

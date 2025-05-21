@@ -47,7 +47,7 @@ trait ListAccess
             $tmp = array_unique($offset);
             $ret = [];
             for($i=0;$i<count($tmp);$i++) {
-                $ret[] = $this->dta[$tmp[$i]] ?? null;
+                $ret[$tmp[$i]] = $this->dta[$tmp[$i]] ?? null;
             }
             return $ret;
          }
