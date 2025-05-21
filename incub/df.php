@@ -49,7 +49,7 @@ class DataFrame
 $data = [
     "calories" => [420, 380, 390],
     "duration" => [50, 40, 45],
-    "name" => [55,66,77]
+    "name" => [55,66,77,99]
 ];
 try {
     $foo = new DataFrame($data, columns:['Kalorien', 'Dauer', 'Namen']);
