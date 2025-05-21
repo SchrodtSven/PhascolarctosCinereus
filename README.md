@@ -67,7 +67,6 @@ $fooDict = new DictClass($test);
 
 # Cutting "columns" from dict like  🐍([🐼, 🐼])
 print_r($fooDict[['id', 'gender']]);
-
 ```
 ```sh
 Array
@@ -75,6 +74,7 @@ Array
     [id] => 2
     [gender] => Female
 )
+```
 
 ## 🐘 - pain, or  PH(P)un?
 
