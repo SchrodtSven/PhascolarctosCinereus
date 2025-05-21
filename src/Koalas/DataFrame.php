@@ -10,7 +10,7 @@
  */
 namespace Koalas;
 
-class DataFrame extends \Koalas\Type\ListClass
+class DataFrame 
 {
 
     // @FIXME - implement functions, adjust signatures and return type defs
@@ -18,4 +18,8 @@ class DataFrame extends \Koalas\Type\ListClass
 
     public function iloc(int $foo)  {}
     
+
+    public function head(int $number) {}
+
+    public function tail(int $number) {}
 }

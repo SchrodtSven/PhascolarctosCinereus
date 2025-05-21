@@ -25,5 +25,30 @@ class Format
         return $tmp;
     }
 
+    /**
+     * Formatting output for given $dta (structure) the print_r way
+     *
+     * @param iterable $dta
+     * @return string
+     */
+    public function printR(iterable $dta): string
+    {
+        $tmp = '';
+        return $tmp;
+    }
 
+    /**
+     * Formatting output for given $dta (structure) the var_dump way
+     *
+     * @param iterable $dta
+     * @return string
+     */
+    public function varDump(iterable $dta): string
+    {
+        ob_start();
+        var_dump($dta);
+        $tmp = ob_get_contents();
+        ob_end_clean();
+        return $tmp;
+    }
 }

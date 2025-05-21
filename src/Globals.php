@@ -12,6 +12,9 @@
 # no namespace, cauz global;)
 use Koalas\Core\StdIO;
 
+$sep=' '; 
+$end=\PHP_EOL;
+
 function kprint(mixed $arg, string $sep=' ', $end=\PHP_EOL): void
 {
    // @FIXME: handling depending on $arg's type  - the snaky way
@@ -22,6 +25,18 @@ function kprint(mixed $arg, string $sep=' ', $end=\PHP_EOL): void
    // print_r($arg);
    print($end);
 }
+
+
+function kprintm(...$args)
+{
+   global $end, $sep;
+
+   foreach($args as $itm) {
+      kprint(($itm));
+   }
+
+}
+
 
 // @FIXME: handling various amount/type of params
 function krange(string|int|float $start, string|int|float $end, int|float $step = 1): array
