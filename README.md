@@ -24,7 +24,7 @@ Just reimplement that stuff, having fun, learning things
 use Koalas\Type\Lst;
 use Koalas\Internal\AccessParser;
 $ap = new AccessParser;
-$foo = new Lst(['Werner', 'Herbert', 'Franzy']);
+$foo = new List(['Werner', 'Herbert', 'Franzy']);
 # MASPIP - Make array sclicing possible in PHP like so:
 var_dump($foo['1:2']);
 /* array(3) {

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * Class managing snaky lists - sssth
+ * Class managing native lists as instances
  * 
  * @author Sven Schrodt<sven@schrodt.club>
  * @link https://github.com/SchrodtSven/PhascolarctosCinereus
@@ -12,24 +12,21 @@
 namespace Koalas\Type;
 
 use Koalas\Core\StdIO;
-use Koalas\Internal\AccessParser;
-use Koalas\Type\Dry\LstAccess; 
 
-class Lst implements \Countable, \Stringable, \Iterator, \ArrayAccess
+class ListClass implements \Countable, \Stringable, \Iterator, \ArrayAccess
 {
-    use LstAccess;
     protected int $position;
 
     public function __construct(protected array $dta = [])
     {
         if(!array_is_list($dta)) {
-            throw new \InvalidArgumentException('This is not a list!');
+            throw new \InvalidArgumentException('This is not a fuckin list!');
         }
     }
 
-    public function col(string $col,  int|string|null $indexKey = null): static
+    public function col(string $col): static
     {
-        return new self(array_column($this->dta, $col, $indexKey));
+        return new self(array_column($this->dta, $col));
     }
 
     public static function readJson(string $fn): static
@@ -65,15 +62,7 @@ class Lst implements \Countable, \Stringable, \Iterator, \ArrayAccess
         return count($this->dta);
     }
 
-    /**
-     * @FIXME implement support for $step param
-     *
-     * @param integer $offset
-     * @param integer $length
-     * @param integer $step
-     * @return void
-     */
-    public function slice(int $offset, int $length, int $step=1)
+    public function slice(int $offset, int $length)
     {
         return array_slice($this->dta, $offset, $length);
     }
@@ -160,16 +149,34 @@ class Lst implements \Countable, \Stringable, \Iterator, \ArrayAccess
         return isset($this->dta[$this->position]);
     }
 
-    public function unique(int $flags = \SORT_STRING): static
+    // Implementing ArrayAccess
+
+
+    public function offsetSet($offset, $value): void
     {
-        return new static (array_unique($this->dta, $flags));
+        if (is_null($offset)) {
+            $this->dta[] = $value;
+        } else {
+            $this->dta[$offset] = $value;
+        }
     }
 
-    public function sum(): int|float
+    public function offsetExists($offset): bool
     {
-        return array_sum($this->dta);
-
+        return isset($this->dta[$offset]);
     }
 
- 
-}   
+    public function offsetUnset($offset): void
+    {
+        unset($this->dta[$offset]);
+    }
+
+    public function offsetGet($offset): mixed
+    {
+        return isset($this->dta[$offset]) ? $this->dta[$offset] : null;
+    }
+
+
+
+
+}

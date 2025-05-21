@@ -14,7 +14,7 @@ namespace Koalas\Type\Dry;
 use Koalas\Core\StdIO;
 use Koalas\Internal\AccessParser;
 
-trait LstAccess 
+trait ListAccess 
 {
     
     // Implementing ArrayAccess incl. access operators like `['0::2']` (from start to end, stepped by 2)

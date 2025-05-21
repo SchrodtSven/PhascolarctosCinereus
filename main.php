@@ -4,14 +4,13 @@
 require_once 'src/Koalas/Bootstrap.php';
 
 
-use Koalas\Type\Ls;
-use Koalas\Type\Lst;
+use Koalas\Type\ListClass;
 use Koalas\Internal\AccessParser;
 
 $ap = new AccessParser;
 #use function Koalas\kprint;
 
-$foo = new Lst(['Werner', 'Herbert', 'Franzy']);
+$foo = new ListClass(['Werner', 'Herbert', 'Franzy']);
 
 
 

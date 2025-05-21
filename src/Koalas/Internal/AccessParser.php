@@ -14,7 +14,7 @@ use Koalas\Type\StringClass;
 
 class AccessParser
 {
-    public const string SEP = ':';
+    public const string SLC_SEP = ':';
 
     private static $instance = null;
 
@@ -36,21 +36,21 @@ class AccessParser
         if(is_int($idxslcstp)) return [$idxslcstp];
         $tmp = [];
 
-        if(!strstr((string) $idxslcstp, self::SEP)) {
+        if(!strstr((string) $idxslcstp, self::SLC_SEP)) {
             if(is_numeric($idxslcstp)) {
                 $tmp = [(int) $idxslcstp];
             } else {
                 $tmp = [$idxslcstp];
             }
         } else {
-            $parts =  explode(self::SEP, $idxslcstp);
+            $parts =  explode(self::SLC_SEP, $idxslcstp);
             $step = 1;
             $start = (int) $parts[0];
             $end = (int) $parts[1];
 
-            if(strpos($idxslcstp, self::SEP) == 0 ) {
+            if(strpos($idxslcstp, self::SLC_SEP) == 0 ) {
                 $tmp = [0,$end];
-            } elseif(strpos($idxslcstp, self::SEP) != strlen($idxslcstp)-1) {
+            } elseif(strpos($idxslcstp, self::SLC_SEP) != strlen($idxslcstp)-1) {
                 $tmp = [$start, $end];
             } else {
                 $tmp = [$start, null];
