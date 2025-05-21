@@ -25,3 +25,11 @@ $data = [
 $foo = new DataFrame($data, columns:['Kalorien', 'Dauer', 'Namen']);
 # DataFrame: Error - All arrays must be of the same length
 ```
+
+
+## FIXME
+
+```php
+
+$df[['all', $foo, 123]]
+```
