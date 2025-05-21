@@ -20,18 +20,20 @@ Just reimplement that stuff, having fun, learning things
 
 ## Code examples
 
-[Example code for basic usage](doc/README.md)
+[More example code for basic usage](doc/README.md)
 
-## "Simple" List and Dict 
+## "Simple" slicing [] operations
 
+### List
 ```php
-use Koalas\Type\Lst;
+use Koalas\Type\ListClass;
 use Koalas\Internal\AccessParser;
 $ap = new AccessParser;
-$foo = new List(['Werner', 'Herbert', 'Franzy']);
+$foo = new ListClass(['Werner', 'Herbert', 'Franzy']);
 
 # MASPIP - Make array sclicing possible in PHP like so:
 var_dump($foo['1:2']);
+
 ```
 
 ```sh
@@ -40,7 +42,10 @@ array(3) {
   string(7) "Herbert"
   [1]=>
   string(6) "Franzy"
-} *```
+} 
+```
+
+### Dict
 
 ```php
 use Koalas\Type\DictClass;
@@ -55,7 +60,8 @@ $test = [
 ];
 
 $fooDict = new DictClass($test);
-# Cutting "columns" from dict like a 🐍
+
+# Cutting "columns" from dict like  🐍([🐼, 🐼])
 print_r($fooDict[['id', 'gender']]);
 
 ```
