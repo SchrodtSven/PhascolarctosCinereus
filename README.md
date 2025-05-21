@@ -1,4 +1,4 @@
-# PhascolarctosCinereus
+# PhascolarctosCinereus 🐨
 Not a snake, nor a panda and also not a bear!
 
 The elephant in the room: we want  filtering data with PHP 8.4+ the snaky way 🐍 - tbh: the [🐼, 🐼] way.
