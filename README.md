@@ -6,19 +6,10 @@ The elephant in the room: we want  filtering data with PHP 8.4+ the snaky way �
 ## DISCLAIMER 
 This is a <abbr title="Proof of concept">POC</abbr>, <abbr title="Work in progress">WIP</abbr>, <abbr title="Where to fly?">WTF</abbr> and only for myself...
 
-## 🐘 - pain, or  PH(P)un?
-
-I do not know, how you like it, but the elephant (Pun intended) in the room will be:
- - reading from different re|sources
- - filtering 
- - manipulating
- - exporting/transforming to different data types/formats
- - tbd stuff
- 
- <b>data</b> with <i>PHP 8.4+</i>
 
 
-- Namespace will be <code>Koalas\\*</code>
+
+
  
 
 ## Motivation 
@@ -42,7 +33,20 @@ var_dump($foo['1:2']);
 } */
 ```
 
-### Convention
+## 🐘 - pain, or  PH(P)un?
+
+I do not know, how you like it, but the elephant (Pun intended) in the room will be:
+ - reading from different re|sources
+ - filtering 
+ - manipulating
+ - exporting/transforming to different data types/formats
+ - doing <abbr title="to be defined">tbd</abbr> stuff
+ 
+ on <b>data</b> with <i>PHP 8.4+</i>
+
+## <abbr title="Design& rchitecture Dossier">DAD</abbr> 
+
+### Conventions
 
 1. We use short hand variable names (dta, col, fn, clj, flr) for (data, column, filename, closure, filter) etc., but 'speaking' class names (e.G: <code>ListClass</code>), and method/function names (e.G: <code>parseAs*(...$arg)</code>)
 
@@ -52,5 +56,6 @@ var_dump($foo['1:2']);
 
 so: be consulted by <code>doc/dct.txt and/or doc/dtadct.md </code>
 
+4. ```Namespace``` will be <code>Koalas\\*</code>
 
 ### 
