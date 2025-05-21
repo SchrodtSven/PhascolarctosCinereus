@@ -22,4 +22,36 @@ class DataFrame
     public function head(int $number) {}
 
     public function tail(int $number) {}
+
+     public const string ERR_ARRAY_LENGTH = 'All arrays must be of the same length';
+
+    protected array $columns;
+
+    protected array $origKeys;
+
+    public function __construct(protected array $dta, $columns = [])
+    {
+        if  (count($columns)) {
+            $this->columns = $columns;
+            $this->origKeys = array_keys($this->dta);
+        } else {
+            $this->columns = array_keys($this->dta);
+            $this->origKeys = $this->columns;
+        }
+           $this->analyze();
+    }
+
+    public function analyze(): void
+    {
+        $noEle = count($this->dta);
+        $row_an = [];
+        
+        for ($i=0;$i<$noEle;$i++) {
+            $row_an[] = count($this->dta[$this->origKeys[$i]]);
+        }
+        if (min($row_an) != max($row_an)) {
+            throw new \InvalidArgumentException(__CLASS__ .': Error - ' .self::ERR_ARRAY_LENGTH);
+        }
+
+    }
 }
