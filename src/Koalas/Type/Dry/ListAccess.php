@@ -19,6 +19,7 @@ trait ListAccess
     
     // Implementing ArrayAccess incl. access operators like `['0::2']` (from start to end, stepped by 2)
 
+        //@FIXME: delegate base functionality 2_ Koalas\Core\Slice;
 
     public function offsetSet($offset, $value): void
     {

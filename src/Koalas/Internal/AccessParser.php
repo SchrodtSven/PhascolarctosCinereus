@@ -28,6 +28,8 @@ class AccessParser
      * - '::2'
      * - '1::2'
      *
+     *  //@FIXME: LET  Koalas\Core\Slice use $this
+     * 
      * @param string|StringClass $idxslc
      * @return array
      */
