@@ -4,7 +4,7 @@ Not a snake, nor a panda and also not a bear!
 The <bigger>🐘<bigger> (not PHP) in the room - we want:
 
 - [ ] access operators for slicing; stepping like
-  - `[2:]` (third elemnt to end)
+  - `[2:]` (third element to end)
   - `[0::2]` (from start to end, stepped by 2)
 - [ ]filtering data with PHP 8.4+ the snaky way 🐍.
   - tbh: also and more important: the [🐼, 🐼] way.
@@ -23,6 +23,10 @@ no mile stones or deadline.
 ## Motivation 
 
 Just reimplement that stuff, having fun, learning things
+
+## Principles 
+
+Although we do have some classes operating as ```array```s, ```list```s, ```dict```s: ```DataFrame```* will use <var>PHP</var> native array functions for performance causes.
 
 ## Code examples
 
