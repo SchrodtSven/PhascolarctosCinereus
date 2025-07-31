@@ -14,7 +14,7 @@ use Koalas\Type\StringClass;
 
 class AccessParser
 {
-    public const string SLC_SEP = ':';
+    public const string SLC_SEP = ':'; // slice
 
     private static $instance = null;
 

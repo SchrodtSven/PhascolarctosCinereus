@@ -2,21 +2,16 @@
 
 
 require_once 'src/Koalas/Bootstrap.php';
+use Koalas\Type\Token;
+use Koalas\Internal\Lexer;
 
 
-use Koalas\Type\DictClass;
-
-#use function Koalas\kprint;
-
-$foo = DictClass::readJson('data/customers_small_db.json');
 
 
-var_dump($foo[1]);
+ 
+$lexer = new Lexer();
 
-exit();
-
-#$foo = DictClass::readJson('data/customers_database.json');
-
-print_r($foo);
-print_r($foo[[3,2,1]]); #WORX!!!!
-# IDs: 4,3,2
+$sub = "a = 12 OR continent ='Europe'";
+$sub = 'continent = "Europe" and amount > 1250';
+$sub = 'ab = 1.234';
+var_dump($lexer->tokenize($sub));

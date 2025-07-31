@@ -13,4 +13,13 @@ dta:data
 kql:Koalas Query Language
 slc:slice
 sep:separator
+QUT:quote
+TKN:Token
+TKN_MLT: multiplication operator
+TKN_EQS: equals operator
+TKN_LT: less than operator
+TKN_GT: greater than
+TKN_OR: or
+TKN_AND: and 
+TKN_WRD: Whole word, not being quote
 

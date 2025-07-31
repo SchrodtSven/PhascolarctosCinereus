@@ -26,7 +26,12 @@ class DataFrame
 
     public function tail(int $number) {}
 
-    public function query(string $kql) {}
+    public function query(string $kql): self
+    {
+        $tmp = [];
+        // process here
+        return new self($tmp);
+    }
 
     public const string ERR_ARRAY_LENGTH = 'All arrays must be of the same length';
 
