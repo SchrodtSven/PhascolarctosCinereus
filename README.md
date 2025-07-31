@@ -110,7 +110,7 @@ I do not know, how you like it, but the elephant (Pun intended) in the room will
 
 ### Conventions
 
-1. We use short hand variable names (```dta, col, fn, clj, flr```) for (data, column, filename, closure, filter) etc., but 'speaking' class names (e.G: <code>ListClass</code>), and method/function names (e.G: <code>parseAs*(...$arg)</code>) - so: be consulted by <kbd>dtadct.md</kbd> / <kbd>dct.txt</kbd>
+1. We use short hand variable names (```dta, col, fn, clj, flr```) for (data, column, filename, closure, filter) etc., but 'speaking' class names (e.G: <code>ListClass</code>), and method/function names (e.G: <code>parseAs*(...$arg)</code>) - so: be consulted by <kbd>doq/docdtadct.md</kbd> / <kbd>doq/dct.txt</kbd>
 
 2. Classes wrapping funtionality for native PHP data types will be named like <code>StringClass</code> as in <code>stdClass</code>, but <i>ucfirst</i>-style
 
