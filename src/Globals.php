@@ -13,6 +13,7 @@
 use Koalas\Core\StdIO;
 use Koalas\Core\StdProcessor;
 
+
 $sep=' '; 
 $end=\PHP_EOL;
 
@@ -54,4 +55,5 @@ function kfunctions(): array
 function with(callable $callback): StdProcessor
 {
    // do Some Stuff
+   return new StdProcessor();
 }

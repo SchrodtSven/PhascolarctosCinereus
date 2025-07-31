@@ -5,3 +5,7 @@ flr:filter
 clj:closure
 wlk:walk
 fn:filename
+len:length
+esc:escape
+enc:enclosure
+dta:data
