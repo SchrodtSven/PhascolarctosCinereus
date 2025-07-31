@@ -120,4 +120,4 @@ so: be consulted by <code>doc/dct.txt and/or doc/dtadct.md </code>
 
 4. ```Namespace``` will be <code>Koalas\\*</code>
 
-### 
+### [DAD - Design& Architecture Dossier](doq/DAD.md)
