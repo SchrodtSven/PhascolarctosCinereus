@@ -33,6 +33,8 @@ class CsvManager
 
     public function readCsv(string $fn): void
     {
+        if(!file_exists($fn))
+            throw new \InvalidArgumentException(('File not found: ' . $fn));
         $this->fn = $fn;
         $tmp = array_map(
             function ($a) {
@@ -53,7 +55,7 @@ class CsvManager
         file_put_contents($fn, $this->raw());
     }
 
-    public function asArray()
+    public function asArray(): array
     {
         return $this->dta;
     }

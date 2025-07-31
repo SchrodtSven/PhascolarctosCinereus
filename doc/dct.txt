@@ -1,4 +1,5 @@
 ;; be strict in what you define and liberal in what you accept - holy Jon!
+;; shell sort me, when ready
 col:column
 frm:from
 flr:filter
@@ -9,3 +10,7 @@ len:length
 esc:escape
 enc:enclosure
 dta:data
+kql:Koalas Query Language
+slc:slice
+sep:separator
+

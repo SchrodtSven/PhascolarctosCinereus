@@ -31,6 +31,6 @@ class Base
     {
         # handle_foo($sql);
         
-        return new DataFrame($dta);
+        return new DataFrame([]);
     }
 }
