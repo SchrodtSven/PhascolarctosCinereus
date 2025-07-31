@@ -11,6 +11,7 @@
 
 # no namespace, cauz global;)
 use Koalas\Core\StdIO;
+use Koalas\Core\StdProcessor;
 
 $sep=' '; 
 $end=\PHP_EOL;
@@ -50,3 +51,7 @@ function kfunctions(): array
    return get_defined_functions()['user'];
 }
 
+function with(callable $callback): StdProcessor
+{
+   // do Some Stuff
+}

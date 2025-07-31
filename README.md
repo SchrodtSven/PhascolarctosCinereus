@@ -1,7 +1,9 @@
 # PhascolarctosCinereus 🐨
 Not a snake, nor a panda and also not a bear!
 
-The <bigger>🐘<bigger> (not PHP) in the room - we want:
+## The <bigger>🐘<bigger> (not PHP) in the room 
+
+We want:
 
 - [ ] access operators for slicing; stepping like
   - `[2:]` (third element to end)
@@ -15,7 +17,18 @@ The <bigger>🐘<bigger> (not PHP) in the room - we want:
 no mile stones or deadline.
 
 
+### Ideas
 
+```php
+
+with($dataStructure).do(function($item) {
+  // process
+})
+
+
+// Qåueries in DataFrames:
+  $data->query("year == 2007")->query("continent == 'Europe'")
+```
 
 
  
