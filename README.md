@@ -43,7 +43,7 @@ Although we do have some classes operating as ```array```s, ```list```s, ```dict
 
 ## Code examples
 
-[More example code for basic usage](doc/README.md)
+[More example code for basic usage](doq/README.md)
 
 ## "Simple" slicing [] operations
 
