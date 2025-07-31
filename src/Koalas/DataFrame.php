@@ -16,6 +16,7 @@ namespace Koalas;
 class DataFrame
 {
 
+     // placeholder/reminder method signatures
     // @FIXME - implement functions, adjust signatures and return type defs
     public function loc(mixed $foo) {}
 
@@ -25,6 +26,12 @@ class DataFrame
     public function head(int $number) {}
 
     public function tail(int $number) {}
+
+    
+
+    public function readCsv(){}
+    
+    public function toCsv(){}
 
     public function query(string $kql): self
     {

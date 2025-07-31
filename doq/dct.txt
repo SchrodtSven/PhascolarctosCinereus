@@ -1,5 +1,8 @@
+;; Data Dictionary for abbreviations used within source code and doq
 ;; be strict in what you define and liberal in what you accept - holy Jon!
 ;; shell sort me, when ready
+;; @author Sven Schrodt<sven@schrodt.club>
+;; @since 2025-04-29
 col:column
 frm:from
 flr:filter
@@ -13,13 +16,13 @@ dta:data
 kql:Koalas Query Language
 slc:slice
 sep:separator
-QUT:quote
 TKN:Token
+TKN_QUT:quote - text between quotation marx ("")
 TKN_MLT: multiplication operator
 TKN_EQS: equals operator
 TKN_LT: less than operator
-TKN_GT: greater than
-TKN_OR: or
-TKN_AND: and 
+TKN_GT: greater than operator
+TKN_OR: or operator
+TKN_AND: and operator
 TKN_WRD: Whole word, not being quote
 

@@ -14,6 +14,7 @@ namespace Koalas\Type;
 
 class Token
 {
+    // Stic public array for valid Tokens with corresponding PCRE pattern
     public static array $valTks = [
         'TKN_QUT' => '/\s*"(([^"\\\\]|\\\\\\\\|\\\\"|\\\\)+)"?(\s+|$)/',
         'TKN_MLT' => '/\s*(\*)/',
