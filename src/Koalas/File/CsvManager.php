@@ -34,16 +34,23 @@ class CsvManager
     public function readCsv(string $fn): void
     {
         $this->fn = $fn;
-        $tmp = array_map(function($a) {
-            return str_getcsv($a, escape:$this->esc);
-        }, file($fn));
+        $tmp = array_map(
+            function ($a) {
+                // @see https://wiki.php.net/rfc/kill-csv-escaping
+                return str_getcsv($a, escape: $this->esc);
+            },
+            file($fn)
+        );
         $this->cols = array_shift($tmp);
-       
+
         foreach ($tmp as $row) {
             $this->dta[] = array_combine($this->cols, $row);
         }
-        
+    }
 
+    public function toCsv(string $fn):  void
+    {
+        file_put_contents($fn, $this->raw());
     }
 
     public function asArray()
@@ -51,7 +58,17 @@ class CsvManager
         return $this->dta;
     }
 
-    public function columns():array
+    public function raw(): array
+    {
+        $tmp = [implode($this->sep, $this->cols)];
+        foreach ($this->dta as $row) {
+            $tmp[] = implode($this->sep, $row);
+        }
+
+        return $tmp;
+    }
+
+    public function columns(): array
     {
         return $this->cols;
     }

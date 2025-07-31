@@ -8,4 +8,4 @@ print_r(kfunctions());
 $csvMgr = new CsvManager('data/worldcities.csv');
 
 #print_r($csvMgr->asArray());
-print_r($csvMgr->columns());
+print_r($csvMgr->raw());
