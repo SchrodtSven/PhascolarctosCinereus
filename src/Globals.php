@@ -23,7 +23,7 @@ function kprint(mixed $arg, string $sep=' ', $end=\PHP_EOL): void
 
    $t = StdIO::toString($arg);
    print($t);
-   // print_r($arg);
+   
    print($end);
 }
 

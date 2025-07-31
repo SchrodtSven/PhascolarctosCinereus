@@ -30,7 +30,7 @@ class Base
     public function readSql(string|StringClass $query, $conn=null): DataFrame
     {
         # handle_foo($sql);
-        $dta = [23];
+        
         return new DataFrame($dta);
     }
 }

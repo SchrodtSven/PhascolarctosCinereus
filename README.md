@@ -8,7 +8,7 @@ We want:
 - [ ] access operators for slicing; stepping like
   - `[2:]` (third element to end)
   - `[0::2]` (from start to end, stepped by 2)
-- [ ]filtering data with PHP 8.4+ the snaky way 🐍.
+- [ ] filtering data with PHP 8.4+ the snaky way 🐍.
   - tbh: also and more important: the [🐼, 🐼] way.
 
 > [!**DISCLAIMER**]
@@ -26,7 +26,7 @@ with($dataStructure).do(function($item) {
 })
 
 
-// Qåueries in DataFrames:
+// Queries in DataFrames:
   $data->query("year == 2007")->query("continent == 'Europe'")
 ```
 
@@ -106,7 +106,7 @@ I do not know, how you like it, but the elephant (Pun intended) in the room will
  
  on <b>data</b> with <i>PHP 8.4+</i>
 
-## <abbr title="Design& rchitecture Dossier">DAD</abbr> 
+## <abbr title="Design& Architecture Dossier">DAD</abbr> 
 
 ### Conventions
 
