@@ -9,28 +9,44 @@ declare(strict_types=1);
  * @package 
  * @version 0.1
  * @since 2025-07-31
- * 
+ * @fixme - reimplement w/o RegEx 
  */
 
 namespace Koalas\Internal;
 
 use Koalas\Type\Token;
+use Koalas\Internal\Grammar;
 
 class Lexer
 {
+    public array $op = [];
+    public array $opMatch = [];
 
+    public function __construct()
+    {   
+        $this->op = Grammar::OP;
+        $this->opMatch = array_map(function($i) {
+                                    return " $i ";
+        }, $this->op ) ;
+    }
 
-    public function tokenize($sub)
+    public function normalize(string $sub): string
     {
+        return str_replace($this->op, $this->opMatch,$sub);
+    }
+
+    public function tokenize(string $sub)
+    {
+        $sub = $this->normalize($sub);
         $tokens = [];
 
-        $offset = 0;
-        while ($offset < strlen($sub)) {
-            $token = $this->match(substr($sub, $offset));
+        $nil = 0;
+        while ($nil < strlen($sub)) {
+            $token = $this->match(substr($sub, $nil));
             if (false === $token) {
                 throw new \InvalidArgumentException(sprintf(ErrorMessages::PARSE_ERR, $sub));
             }
-            $offset += $token->size;
+            $nil += $token->size;
             $tokens[] = $token;
         }
 
@@ -41,7 +57,8 @@ class Lexer
     {
         foreach (Token::$valTks as $name => $pattern) {
             $matches = [];
-            if (preg_match($pattern . 'A', $sub, $matches) ===1) {
+            #die($pattern);
+            if (preg_match($pattern . 'A', $sub, $matches) === 1) {
                 return new Token($name, strlen($matches[0]), $matches[1]);
             }
         }

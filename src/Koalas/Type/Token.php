@@ -14,11 +14,15 @@ namespace Koalas\Type;
 
 class Token
 {
-    // Stic public array for valid Tokens with corresponding PCRE pattern
+    // Static public array for valid Tokens with corresponding PCRE pattern
+    // @FIXME -> to Koalas\InternalGrammar
     public static array $valTks = [
         'TKN_QUT' => '/\s*"(([^"\\\\]|\\\\\\\\|\\\\"|\\\\)+)"?(\s+|$)/',
         'TKN_MLT' => '/\s*(\*)/',
+        
+        'TKN_GE' => '/\s*(\>\=)/',
         'TKN_EQS' => '/\s*(\=)/',
+        
         'TKN_LT' => '/\s*(\<)/',
         'TKN_GT' => '/\s*(\>)/',
         'TKN_OR' => '/\s*(or)(\s+|$)/',

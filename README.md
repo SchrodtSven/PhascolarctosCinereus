@@ -11,17 +11,18 @@ We want:
 - [ ] filtering data with PHP 8.4+ the snaky way 🐍.
   - tbh: also and more important: the [🐼, 🐼] way.
 
-> [!**DISCLAIMER**]
-
->This is a <abbr title="Proof of concept">POC</abbr>, <abbr title="Work in progress">WIP</abbr>, <abbr title="Where to fly?">WTF</abbr> and only for myself with
+> [!IMPORTANT]  [^1]
+> This is a <abbr title="Proof of concept">POC</abbr>, <abbr title="Work in progress">WIP</abbr>, <abbr title="Where to fly?">WTF</abbr> and only for myself with
 no mile stones or deadline.
+
+
 
 
 ### Ideas
 
 ```php
 
-with($dataStructure).do(function($item) {
+with($dataStructure)->(function($item) {
   // process
 })
 
@@ -121,3 +122,18 @@ so: be consulted by <code>doc/dct.txt and/or doc/dtadct.md </code>
 4. ```Namespace``` will be <code>Koalas\\*</code>
 
 ### [DAD - Design& Architecture Dossier](doq/DAD.md)
+
+## Epilogue
+
+## TODO 
+Make it installable via composer
+
+
+## let's be quite serious
+- It is all feasable, but f*n' slow
+
+Let us (re) implement that as PHP exts in <code>Zephir</code>, or even better <code>Rust</code> - I will not <kbd>touch f_in.c</kbd> any more at my age,
+nor write any line of GO, or how th f*n' stuff will be named after, before or whatsoever!
+
+[^1]: <time datetime="2025-08-19">2025-08-19</time>
+- [x] [started](https://github.com/SchrodtSven/Koalas_Zep) reimplenting in Zephir
