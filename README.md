@@ -129,10 +129,9 @@ Make it installable via composer
 
 
 ## let's be quite serious
-- It is all feasable, but f*n' slow
+- It is all feasable, but slow, when handling big structures.
 
-Let us (re) implement that as PHP exts in <code>Zephir</code>, or even better <code>Rust</code> - I will not <kbd>touch f_in.c</kbd> any more at my age,
-nor write any line of GO, or how th f*n' stuff will be named after, before or whatsoever!
+Let us (re) implement that as PHP exts in <code>[Zephir](https://zephir-lang.com/en)</code>, or even better <code>Rust</code>!
 
 [^1]: <time datetime="2025-08-19">2025-08-19</time>
-- [x] [started](https://github.com/SchrodtSven/Koalas_Zep) reimplenting in Zephir
+- [x] [started](https://github.com/SchrodtSven/Koalas_Zep) re-implementing in Zephir
